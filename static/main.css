@@ -2,6 +2,23 @@
     --border-radius: 2px;
 }
 
+* {
+   box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-rows: 90px 60px 460px 150px 40px;
+}
+
 
 table {
     border-collapse: collapse;
@@ -11,35 +28,55 @@ table {
 colgroup, tbody {
     border: solid medium; }
 
-
 td { border: solid thin;
     height: 1.4em;
     width: 1.4em;
     text-align: center;
     padding: 0; }
 
+.slot {
+    width: 75px;
+    box-shadow: 0 0 0 3px #122138;
+    border-radius: var(--border-radius);
+}
+
+.header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: darkcyan;
+}
+
+.game-info {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.game-board {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: darkseagreen;
+}
 
 
 .all-cards {
 
-    position: fixed;
-    bottom: 80px;
-    margin: auto;
     width: 100%;
     display: flex;
     align-content: center;
     justify-content: center;
-    border: 10px dashed transparent;
+    background-color: #86989B;
 }
 
 .card {
-
     margin: 14px;
 }
 
 .card > img {
-
-    width: 75px;
+    width: 65px;
     box-shadow: 0 0 0 3px #122138;
     border-radius: var(--border-radius);
 }
