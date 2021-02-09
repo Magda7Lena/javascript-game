@@ -17,7 +17,7 @@ let symbols = [
     {name: "emot", img: "img/emot.png",}
 ];
 
-let grid = document.querySelectorAll('slot');
+// let grid = document.querySelectorAll('slot');
 
 
 
@@ -38,10 +38,11 @@ const board = document.getElementById("board");
 function initBoard(rows, cols) {
   board.style.setProperty('--grid-rows', rows);
   board.style.setProperty('--grid-cols', cols);
-  for (let b = 0; b < (rows * cols); b++) {
+  for (let slotId = 0; slotId < (rows * cols); slotId++) {
       let slot = document.createElement('div');
-        slot.setAttribute('class', 'slot');
-    board.appendChild(slot).className = "slot";
+      slot.setAttribute('id',slotId+1);
+      slot.setAttribute('class', 'slot');
+      board.appendChild(slot).className = "slot";
   }
 }
 

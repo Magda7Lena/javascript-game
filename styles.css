@@ -1,5 +1,7 @@
 :root {
     --border-radius: 10px;
+    --grid-cols: 1;
+    --grid-rows: 1;
 }
 
 body {
@@ -41,10 +43,7 @@ body {
     border-radius: var(--border-radius);
     border-style: dashed;
 }
-:root {
-  --grid-cols: 1;
-  --grid-rows: 1;
-}
+
 
 #board {
   display: grid;
