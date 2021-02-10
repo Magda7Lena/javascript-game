@@ -1,5 +1,5 @@
 
-let cards =
+let symbols =
         [{name: "jellyfish", img: "../static/images/1-jellyfish.png",},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png",},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png",},
@@ -31,21 +31,20 @@ function displayEmptySlots(rows, cols) {
     }
 }
 
-function displayCards(cards) {
-    let len = cards.length;
+function displaySymbols(symbols) {
+    let len = symbols.length;
     for (let i = 0; i < len ; i++){
-        let card = document.createElement("img");
-        let source = cards[i].img;
-        card.setAttribute('src', source);
-        card.setAttribute('class','card');
-        let parent = document.querySelector(".all-cards");
-        parent.appendChild(card);
+        let img = document.createElement("img");
+        let source = symbols[i].img;
+        img.setAttribute('src', source);
+        let parent = document.querySelector(".symbols");
+        parent.appendChild(img);
     }
 }
 
 function initBoard() {
     displayEmptySlots(4, 4);
-    displayCards(cards);}
+    displaySymbols(symbols);}
 
 
 function initGame() {
