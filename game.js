@@ -20,6 +20,24 @@ let cards =
 const board = document.getElementById("board");
 
 
+function enterUserName(){
+    let parent = document.querySelector(".game-info");
+    let user = document.getElementById("userName").value;
+    let userDisplay = document.createElement('div');
+
+    userDisplay.innerText = `player: ${user}`;
+    parent.appendChild(userDisplay);
+    let inputField = document.querySelector("input");
+    let inputButton = document.querySelector("button");
+    parent.removeChild(inputField);
+    parent.removeChild(inputButton);
+}
+
+
+
+function chooseDifficulty() {
+}
+
 function displayEmptySlots(rows, cols) {
     board.style.setProperty('--grid-rows', rows);
     board.style.setProperty('--grid-cols', cols);
