@@ -3,8 +3,6 @@
 <head>
     <title>Javascript Game</title>
     <meta charset="UTF-8">
-    <!-- http://proger.i-forge.net/The_smallest_transparent_pixel/ -->
-    <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=">
     <link rel="stylesheet" type="text/css" href="../static/main.css">
 
 </head>
@@ -16,133 +14,20 @@
 
 
 <section class="game-board">
-<!--        <table>-->
-<!--          <caption>Sudoku js game</caption>-->
-<!--          <colgroup><col><col><col>-->
-<!--          <colgroup><col><col><col>-->
-<!--          <colgroup><col><col><col>-->
-<!--          <tbody>-->
-<!--           <tr> <td>1 <td>  <td>3 <td>6 <td>  <td>4 <td>7 <td>  <td>9-->
-<!--           <tr> <td>  <td>2 <td>  <td>  <td>9 <td>  <td>  <td>1 <td>-->
-<!--           <tr> <td>7 <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>6-->
-<!--          <tbody>-->
-<!--           <tr> <td>2 <td>  <td>4 <td>  <td>3 <td>  <td>9 <td>  <td>8-->
-<!--           <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>-->
-<!--           <tr> <td>5 <td>  <td>  <td>9 <td>  <td>7 <td>  <td>  <td>1-->
-<!--          <tbody>-->
-<!--           <tr> <td>6 <td>  <td>  <td>  <td>5 <td>  <td>  <td>  <td>2-->
-<!--           <tr> <td>  <td>  <td>  <td>  <td>7 <td>  <td>  <td>  <td>-->
-<!--           <tr> <td>9 <td>  <td>  <td>8 <td>  <td>2 <td>  <td>  <td>5-->
-<!--        </table>-->
 
 
+    <div class="board" id="board"></div>
 
-<div class="board">
-        <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-        </div>
-            <div class="square">
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            </div>
-</div>
 
 </section>
 
 
 <section class="all-cards">
+
+    <div class="symbols"></div>
+
+
+
     <div class="card"><img src="../static/images/1-jellyfish.png" alt="jellyfish"/></div>
     <div class="card"><img src="../static/images/2-windsurf.png" alt="windsurf"/></div>
     <div class="card"><img src="../static/images/3-airplane.png" alt="airplane"/></div>
@@ -160,6 +45,8 @@
 
 
 <section class="footer">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></section>
+<script src="../game.js" defer></script>
+
 
 </body>
 </html>
