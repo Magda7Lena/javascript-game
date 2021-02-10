@@ -35,10 +35,19 @@ function enterUserName(){
 
 
 
-function chooseDifficulty() {
-}
+function displayEmptySlots() {
+    let difficultyLevel = document.getElementById("difficulty").value;
+    console.log(difficultyLevel);
+    if (difficultyLevel === "Easy") {
+        difficultyLevel = [4,4];
+    } else if (difficultyLevel === "Medium") {
+        difficultyLevel = [6,6];
+    } else {
+        difficultyLevel = [9,9];
+    }
+    let rows = difficultyLevel[0];
+    let cols = difficultyLevel[1];
 
-function displayEmptySlots(rows, cols) {
     board.style.setProperty('--grid-rows', rows);
     board.style.setProperty('--grid-cols', cols);
     for (let slotId = 0; slotId < (rows * cols); slotId++) {
@@ -62,11 +71,14 @@ function displayCards(cards) {
 }
 
 function initBoard() {
+
     displayEmptySlots(4, 4);
     displayCards(cards);}
 
 
 function initGame() {
+
+    enterUserName();
     initBoard();
 }
 

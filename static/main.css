@@ -23,23 +23,35 @@ html, body {
 }
 
 .game-info {
-    display: flex;
+    display: inline-flex;
     /*align-content: flex-start;*/
     /*justify-content: flex-start;*/
     background-color: #FBA100;
 }
 
 .game-info.input {
-    display: inline-grid;
-    justify-content: left;
+    display: inline-flex;
+    justify-content: flex-start;
 
 }
 
 section.game-cards.div {
-    display: grid;
-    justify-content: right !important;
-
+    float: right;
+    display: inline-flex;
+    justify-content: flex-end !important;
 }
+
+section.game-cards.button {
+    float: right;
+    display: inline-flex;
+    justify-content: flex-start !important;
+}
+section.game-cards.select {
+    display: inline-flex;
+    justify-content: center;
+    width: 30px
+}
+
 
 
 section.game-board {
