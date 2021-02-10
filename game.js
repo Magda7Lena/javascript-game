@@ -1,52 +1,55 @@
+let symbols;
+symbols = [
+    {name: "donut", img: "img/donut.png",},
+    {name: "donut", img: "img/donut.png",},
+    {name: "donut", img: "img/donut.png",},
+    {name: "donut", img: "img/donut.png",},
+    {name: "flamingo", img: "img/flamingo.png",},
+    {name: "flamingo", img: "img/flamingo.png",},
+    {name: "flamingo", img: "img/flamingo.png",},
+    {name: "flamingo", img: "img/flamingo.png",},
+    {name: "cactus", img: "img/cactus.png",},
+    {name: "cactus", img: "img/cactus.png",},
+    {name: "cactus", img: "img/cactus.png",},
+    {name: "cactus", img: "img/cactus.png",},
+    {name: "emot", img: "img/emot.png",},
+    {name: "emot", img: "img/emot.png",},
+    {name: "emot", img: "img/emot.png",},
+    {name: "emot", img: "img/emot.png",}
+];
 
-let symbols = [
-    {name: "donut", img:"img/donut.png",},
-    {name: "donut", img:"img/donut.png",},
-    {name: "donut", img:"img/donut.png",},
-    {name: "donut", img:"img/donut.png",},
-    {name: "flamingo", img:"img/flamingo.png",},
-    {name: "flamingo", img:"img/flamingo.png",},
-    {name: "flamingo", img:"img/flamingo.png",},
-    {name: "flamingo", img:"img/flamingo.png",},
-    {name: "cactus", img:"img/cactus.png",},
-    {name: "cactus", img:"img/cactus.png",},
-    {name: "cactus", img:"img/cactus.png",},
-    {name: "cactus", img:"img/cactus.png",},
-    {name: "emot", img:"img/emot.png",},
-    {name: "emot", img:"img/emot.png",},
-    {name: "emot", img:"img/emot.png",},
-    {name: "emot", img:"img/emot.png",},
-]
-
-let grid = document.querySelectorAll('slot')
-
-
+const board = document.getElementById("board");
 
 
 function initBoard() {
-    let slot = document.createElement('div')
-    slot.setAttribute('slot')
-    let div = document.querySelector('.board')
-    div.appendChild(slot)
-
-
-    let img = document.createElement("img");
-    img.setAttribute('src','img/donut.png');
-    let parent = document.querySelector(".symbols");
-    parent.appendChild(img)
-
-
-    // for(let symbol of symbols){
-    //     let img = document.createElement('img')
-    //     img.setAttribute('src','img/donut.png')
-    // }
-
+    displayEmptySlots(4, 4);
+    displaySymbols(symbols);
 }
 
+function displayEmptySlots(rows, cols) {
+    board.style.setProperty('--grid-rows', rows);
+    board.style.setProperty('--grid-cols', cols);
+    for (let b = 0; b < (rows * cols); b++) {
+        let slot = document.createElement('div');
+        slot.setAttribute('class', 'slot');
+        slot.setAttribute('data_id', b);
+        board.appendChild(slot).className = "slot";
+    }
+}
+
+function displaySymbols(symbols) {
+    let len = symbols.length;
+    for (i = 0; i < len ; i++){
+        let img = document.createElement("img");
+        let source = symbols[i].img;
+        img.setAttribute('src', source);
+        let parent = document.querySelector(".symbols");
+        parent.appendChild(img);
+    }
+}
 
 function initGame() {
-    initBoard()
-
+    initBoard();
 }
 
 initGame();

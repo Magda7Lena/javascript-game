@@ -1,6 +1,9 @@
 :root {
     --border-radius: 10px;
+    --grid-cols: 1;
+    --grid-rows: 1;
 }
+
 
 body {
     width: auto;
@@ -16,8 +19,9 @@ body {
 
 }
 
+
 .board {
-    padding: 50px 50px 50px 50px;
+    height: 75vh;
     border-style: solid;
     align-items: center;
     justify-content: space-around;
@@ -27,24 +31,39 @@ body {
 }
 
 
-.slot {
-    width: 170px;
-    height: 170px;
-    margin: 10px;
-    background-color: cornflowerblue;
-    border-radius: var(--border-radius);
-    border: 1px solid black;
-}
-
-
 .symbols {
+    display: grid;
+    /*max-height: 100vh;*/
+    /*max-width: 50vw;*/
     border-style: solid;
+    grid-template-columns: 1fr 1fr 1fr 1fr
+
 }
 
-.symbol > img {
-    margin: 0px;
-    padding: 5px 5px 5px 5px;
+
+#img {
+    margin: 30px;
+    padding: 30px 30px 30px 30px;
     box-shadow: 0 0 0 4px ghostwhite;
     border-radius: var(--border-radius);
     border-style: dashed;
+}
+
+
+#board {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+
+}
+
+
+.slot {
+    width: 110px;
+    height: 110px;
+    margin: 2px;
+    background-color: cornflowerblue;
+    border-radius: var(--border-radius);
+    border: 1px solid black;
 }
