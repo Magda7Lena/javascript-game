@@ -66,6 +66,7 @@ function displayCards(cards) {
     }
 }
 
+
 function uploadGameData(gameData) {
     let grid = document.querySelectorAll('.slot');
     for(let slot in grid) {
