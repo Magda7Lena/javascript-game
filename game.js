@@ -38,7 +38,6 @@ let freeSymbols = [
     {name: "airplane", img: "../static/images/3-airplane.png",},
     {name: "surf", img: "../static/images/6-surf.png",},
     {name: "surf", img: "../static/images/6-surf.png",},
-
 ];
 
 const board = document.getElementById("board");
@@ -66,6 +65,7 @@ function displayCards(cards) {
         parent.appendChild(card);
     }
 }
+
 
 function uploadGameData(gameData) {
     let grid = document.querySelectorAll('.slot');
