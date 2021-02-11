@@ -38,6 +38,16 @@ html, body {
     font-family: Monospaced, sans-serif;
 
 }
+
+.select, .input {
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
 .selected {
     display: flex;
     text-align: center;

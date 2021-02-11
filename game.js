@@ -62,10 +62,12 @@ function enterUserName(){
     userDisplay.setAttribute("userinput",user);
     userDisplay.classList.add("UserName");
     parent.appendChild(userDisplay);
+    userDisplay.innerText = `player: ${user}`;
+
     let formUser = document.getElementById("formUser");
     parent.removeChild(formUser);
 
-    userDisplay.innerText = `player: ${user}`;
+
 }
 
 function diffLevel(){
@@ -75,10 +77,23 @@ function diffLevel(){
     optionDisplay.setAttribute("diffLevel",option);
     optionDisplay.classList.add("selected");
     parent.appendChild(optionDisplay);
+    optionDisplay.innerText = `difficulty level: ${option}`;
+
     let formLevel = document.getElementById("formLevel");
     parent.removeChild(formLevel);
 
-    optionDisplay.innerText = `difficulty level: ${option}`;
+    let slotsToremove = document.querySelectorAll(".slot");
+    slotsToremove.forEach(function(element) {
+    element.remove();
+    });
+
+    if (option === "Easy"){
+        initBoard(4,4);
+    } else if (option === "Medium") {
+        initBoard(6,6);
+    } else {
+        initBoard(9,9);
+    }
 }
 
 
@@ -114,15 +129,15 @@ function uploadGameData(gameData) {
 }
 
 
-function initBoard() {
-    displayEmptySlots(4, 4);
+function initBoard(rows, cols) {
+    displayEmptySlots(rows,cols);
     uploadGameData(gameData);
     displayCards(freeSymbols);
 }
 
 
 function initGame() {
-    initBoard();
+
 }
 
 initGame();
