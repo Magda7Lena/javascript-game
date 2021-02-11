@@ -54,6 +54,36 @@ function displayEmptySlots(rows, cols) {
     }
 }
 
+function enterUserName(){
+
+    let parent = document.querySelector(".game-info");
+    let user = document.getElementById("userName").value;
+    let userDisplay = document.createElement('div');
+    userDisplay.setAttribute("userinput",user);
+    userDisplay.classList.add("UserName");
+    parent.appendChild(userDisplay);
+    let formUser = document.getElementById("formUser");
+    parent.removeChild(formUser);
+
+    userDisplay.innerText = `player: ${user}`;
+}
+
+function diffLevel(){
+    let parent = document.querySelector(".game-info");
+    let option = document.getElementById("difficulty").value;
+    let optionDisplay = document.createElement("div");
+    optionDisplay.setAttribute("diffLevel",option);
+    optionDisplay.classList.add("selected");
+    parent.appendChild(optionDisplay);
+    let formLevel = document.getElementById("formLevel");
+    parent.removeChild(formLevel);
+
+    optionDisplay.innerText = `difficulty level: ${option}`;
+}
+
+
+
+
 function displayCards(cards) {
     let len = cards.length;
     for (let i = 0; i < len ; i++){
@@ -86,7 +116,7 @@ function uploadGameData(gameData) {
 
 function initBoard() {
     displayEmptySlots(4, 4);
-    uploadGameData(gameData)
+    uploadGameData(gameData);
     displayCards(freeSymbols);
 }
 
@@ -95,4 +125,4 @@ function initGame() {
     initBoard();
 }
 
-initGame()
+initGame();

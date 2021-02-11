@@ -10,7 +10,24 @@
 
 <section class="header">sudoku game</section>
 
-<section class="game-info">score</section>
+<section class="game-info">
+    <form id="formUser">
+        <input class="input" type="text" id="userName">
+        <button type="submit" onclick="enterUserName()">confirm</button>
+    </form>
+
+
+    <form id="formLevel">
+
+        <select class="select" id="difficulty" onchange="diffLevel()">
+            <option>--Please choose a level--</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+        </select>
+    </form>
+
+</section>
 
 
 <section class="game-board">
