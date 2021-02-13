@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f793b9f-add4-43e8-bed7-7ced19ba8d2f" name="Default Changelist" comment="medium i hard added, css auto height">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="6f793b9f-add4-43e8-bed7-7ced19ba8d2f" name="Default Changelist" comment="inittimer, 1/2, css-input/level">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613158463320</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="inittimer, 1/2, css-input/level">
+      <created>1613232827011</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1613232827011</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +267,8 @@
     <MESSAGE value="enterUserName i diffLevel + css" />
     <MESSAGE value="diff level connected with init board" />
     <MESSAGE value="medium i hard added, css auto height" />
-    <option name="LAST_COMMIT_MESSAGE" value="medium i hard added, css auto height" />
+    <MESSAGE value="inittimer, 1/2, css-input/level" />
+    <option name="LAST_COMMIT_MESSAGE" value="inittimer, 1/2, css-input/level" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/javascript_game$app.coverage" NAME="app Coverage Results" MODIFIED="1613155279947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
