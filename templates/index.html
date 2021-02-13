@@ -13,16 +13,21 @@
 <section class="header">sudoku game</section>
 
 <section class="game-info">
-    <form id="formUser">
-        <input class="input" type="text" id="userName">
-        <button type="submit" onclick="enterUserName()">confirm</button>
+    <form class="form-inline" id="formUser">
+        <div class="form-group mb-3">
+            <input class="input" type="text" id="userName" placeholder="your name here">
+            <button type="submit" class="btn btn-secondary mb2" onclick="enterUserName()">confirm</button>
+        </div>
+
     </form>
+
+
 
 
     <form id="formLevel">
 
-        <select class="select" id="difficulty" onchange="diffLevel()">
-            <option>--Please choose a level--</option>
+        <select class="custom-select" id="difficulty" onchange="diffLevel()">
+            <option selected>Please choose a level</option>
             <option>Easy</option>
             <option>Medium</option>
             <option>Hard</option>

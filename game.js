@@ -246,27 +246,42 @@ function uploadGameData(gameData) {
     }
 }
 
-// function uploadCards(gameData) {
-//     let slots = document.querySelectorAll('.slot');
-//     console.log(slots);
-//     for (let slotId in slots.id) {
-//         console.log(slotId);
-//         if (slotId === gameData.id) {
-//             let fullSlot = document.createElement("img");
-//             let source = gameData.img;
-//             fullSlot.setAttribute('src', source);
-//             fullSlot.setAttribute('class', 'fullSlot');
-//             console.log(fullSlot);
-//             slots[slotId].setAttribute('name', gameData.name);
-//             slots[slotId].appendChild(fullSlot);
-//         }
-//
-//     }
-// }
+function displayTimer() {
+
+    let parent = document.querySelector('.game-info');
+    let stopwatch = document.createElement('div');
+    let timer = document.createElement('ul');
+    let controls = document.createElement('div');
+    let startButton = document.createElement('button');
+    let stopButton = document.createElement('button');
+    let restartButton = document.createElement('button');
+    let resetButton = document.createElement('button');
+
+
+
+    stopwatch.setAttribute("class", "container");
+    timer.setAttribute("class","panel");
+    controls.setAttribute("class","btn-group");
+    controls.setAttribute("role","toolbar");
+    controls.setAttribute("aria-label","Toolbar with button groups");
+    startButton.setAttribute("class","btn btn-primary");
+    stopButton.setAttribute("class","btn btn-primary");
+    restartButton.setAttribute("class","btn btn-primary");
+    resetButton.setAttribute("class","btn btn-primary");
+
+    parent.appendChild(stopwatch);
+    stopwatch.appendChild(timer);
+    stopwatch.appendChild(controls);
+    controls.appendChild(startButton);
+    controls.appendChild(stopButton);
+    controls.appendChild(restartButton);
+    controls.appendChild(resetButton);
+}
 
 
 
 function initBoard(rows, cols) {
+    displayTimer();
     displayEmptySlots(rows,cols);
     // uploadGameData(gameData);
     // displayCards(freeSymbols);
