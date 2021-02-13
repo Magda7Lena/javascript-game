@@ -1,0 +1,99 @@
+Index: static/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>:root {\n    --border-radius: 2px;\n    --grid-cols: 1;\n    --grid-rows: 1;\n}\n\n\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n    display: grid;\n    height: 100vh;\n    width: 100%;\n    grid-template-rows: 70px 40px 410px 200px 50px;\n}\n\n.header {\n    display: flex;\n    align-content: center;\n    justify-content: center;\n    background-color: #6C648B;\n}\n\n.game-info {\n    display: inline-flex;\n    /*align-content: flex-start;*/\n    /*justify-content: flex-start;*/\n    background-color: #FBA100;\n}\n\n.game-info.input {\n    display: inline-flex;\n    justify-content: flex-start;\n\n}\n\nsection.game-cards.div {\n    float: right;\n    display: inline-flex;\n    justify-content: flex-end !important;\n}\n\nsection.game-cards.button {\n    float: right;\n    display: inline-flex;\n    justify-content: flex-start !important;\n}\nsection.game-cards.select {\n    display: inline-flex;\n    justify-content: center;\n    width: 30px\n}\n\n\n\nsection.game-board {\n    align-items: center;\n    display: flex;\n    align-content: center;\n    justify-content: center;\n    background-color: #B6A19E;\n}\n\n.game-cards {\n    display: flex;\n    align-content: center;\n    justify-content: center;\n    background-color: #6BBAA7;\n}\n\n.footer {\n    position: fixed;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    background-color: #86989B;\n    color: darkslategray;\n    font-size: smaller;\n    text-align: center;\n}\n\n#board {\n    width: min-content;\n    height: min-content;\n    display: grid;\n    grid-template-rows: repeat(var(--grid-rows), 1fr);\n    grid-template-columns: repeat(var(--grid-cols), 1fr);\n    box-shadow: 0 0 0 1px #122138;\n    gap:3px;\n}\n\n\n.slot {\n    width: 55px;\n    height: 55px;\n    box-shadow: 0 0 0 1px #122138;\n    align-self: center;\n    justify-self: center;\n    border-radius: var(--border-radius);}\n\n\n.all-cards {width: 100%;\n    display: flex;\n    flex-wrap: wrap;\n    align-content: center;\n    justify-content: center;\n    background-color: #6BBAA7;}\n\n.card {\n    margin: 14px;\n    width: 55px;\n    height: 55px;\n    padding: 2px;\n    box-shadow: 0 0 0 2px #122138;\n    border-radius: var(--border-radius);\n}\n\n.card > img {\n    width: 55px;\n    height: 55px;\n    box-shadow: 0 0 0 2px #122138;\n    border-radius: var(--border-radius);\n}\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/main.css b/static/main.css
+--- a/static/main.css	(revision 703b54531e13a8c16c06f0c90c48efe6575bbaa3)
++++ b/static/main.css	(date 1613037545034)
+@@ -24,8 +24,8 @@
+ 
+ .game-info {
+     display: inline-flex;
+-    /*align-content: flex-start;*/
+-    /*justify-content: flex-start;*/
++    align-content: flex-start;
++    justify-content: flex-start;
+     background-color: #FBA100;
+ }
+ 
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Javascript Game</title>\n    <meta charset=\"UTF-8\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../static/main.css\">\n\n</head>\n<body>\n\n<section class=\"header\">sudoku game</section>\n\n<section class=\"game-info\">\n\n    <input class=\"input\" type=\"text\" id=\"userName\" value=\"your name here...\">\n    <button onclick=\"enterUserName()\">confirm</button>\n    <select id=\"difficulty\" onchange=\"displayEmptySlots()\">\n        <option>Easy</option>\n        <option>Medium</option>\n        <option>Hard</option>\n    </select>\n\n</section>\n<section class=\"game-board\">\n    <div class=\"board\" id=\"board\"></div>\n</section>\n\n<section class=\"game-cards\">\n\n    <div class=\"all-cards\"></div>\n\n</section>\n\n<section class=\"footer\">Icons made by <a href=\"https://www.freepik.com\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a></section>\n<script src=\"../game.js\" defer></script>\n\n\n</body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	(revision 703b54531e13a8c16c06f0c90c48efe6575bbaa3)
++++ b/templates/index.html	(date 1613041226313)
+@@ -11,16 +11,21 @@
+ <section class="header">sudoku game</section>
+ 
+ <section class="game-info">
+-
+-    <input class="input" type="text" id="userName" value="your name here...">
+-    <button onclick="enterUserName()">confirm</button>
+-    <select id="difficulty" onchange="displayEmptySlots()">
+-        <option>Easy</option>
+-        <option>Medium</option>
+-        <option>Hard</option>
+-    </select>
++    <form>
++        <input class="input" type="text" id="userName">
++        <button type="submit" onclick="enterUserName()">confirm</button>
++    </form>
++    <form>
++        <select id="difficulty" onchange="displayEmptySlots()">
++            <option>Easy</option>
++            <option>Medium</option>
++            <option>Hard</option>
++        </select>
++    </form>
+ 
+ </section>
++
++
+ <section class="game-board">
+     <div class="board" id="board"></div>
+ </section>
+Index: game.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\nlet cards =\n        [{name: \"jellyfish\", img: \"../static/images/1-jellyfish.png\",},\n    {name: \"jellyfish\", img: \"../static/images/1-jellyfish.png\",},\n    {name: \"jellyfish\", img: \"../static/images/1-jellyfish.png\",},\n    {name: \"jellyfish\", img: \"../static/images/1-jellyfish.png\",},\n    {name: \"flamingo\", img: \"../static/images/7-flamingo.png\",},\n    {name: \"flamingo\", img: \"../static/images/7-flamingo.png\",},\n    {name: \"flamingo\", img: \"../static/images/7-flamingo.png\",},\n    {name: \"flamingo\", img: \"../static/images/7-flamingo.png\",},\n    {name: \"airplane\", img: \"../static/images/3-airplane.png\",},\n    {name: \"airplane\", img: \"../static/images/3-airplane.png\",},\n    {name: \"airplane\", img: \"../static/images/3-airplane.png\",},\n    {name: \"airplane\", img: \"../static/images/3-airplane.png\",},\n    {name: \"surf\", img: \"../static/images/6-surf.png\",},\n    {name: \"surf\", img: \"../static/images/6-surf.png\",},\n    {name: \"surf\", img: \"../static/images/6-surf.png\",},\n    {name: \"surf\", img: \"../static/images/6-surf.png\"}];\n\nconst board = document.getElementById(\"board\");\n\n\nfunction enterUserName(){\n    let parent = document.querySelector(\".game-info\");\n    let user = document.getElementById(\"userName\").value;\n    let userDisplay = document.createElement('div');\n\n    userDisplay.innerText = `player: ${user}`;\n    parent.appendChild(userDisplay);\n    let inputField = document.querySelector(\"input\");\n    let inputButton = document.querySelector(\"button\");\n    parent.removeChild(inputField);\n    parent.removeChild(inputButton);\n}\n\n\n\nfunction displayEmptySlots() {\n    let difficultyLevel = document.getElementById(\"difficulty\").value;\n    console.log(difficultyLevel);\n    if (difficultyLevel === \"Easy\") {\n        difficultyLevel = [4,4];\n    } else if (difficultyLevel === \"Medium\") {\n        difficultyLevel = [6,6];\n    } else {\n        difficultyLevel = [9,9];\n    }\n    let rows = difficultyLevel[0];\n    let cols = difficultyLevel[1];\n\n    board.style.setProperty('--grid-rows', rows);\n    board.style.setProperty('--grid-cols', cols);\n    for (let slotId = 0; slotId < (rows * cols); slotId++) {\n        let slot = document.createElement('div');\n        slot.setAttribute('class', 'slot');\n        slot.setAttribute('id', slotId);\n        board.appendChild(slot).className = \"slot\";\n    }\n}\n\nfunction displayCards(cards) {\n    let len = cards.length;\n    for (let i = 0; i < len ; i++){\n        let card = document.createElement(\"img\");\n        let source = cards[i].img;\n        card.setAttribute('src', source);\n        card.setAttribute('class','card');\n        let parent = document.querySelector(\".all-cards\");\n        parent.appendChild(card);\n    }\n}\n\nfunction initBoard() {\n\n    displayEmptySlots(4, 4);\n    displayCards(cards);}\n\n\nfunction initGame() {\n\n    enterUserName();\n    initBoard();\n}\n\ninitGame();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/game.js b/game.js
+--- a/game.js	(revision 703b54531e13a8c16c06f0c90c48efe6575bbaa3)
++++ b/game.js	(date 1613052088450)
+@@ -21,12 +21,14 @@
+ 
+ 
+ function enterUserName(){
++
+     let parent = document.querySelector(".game-info");
+     let user = document.getElementById("userName").value;
+     let userDisplay = document.createElement('div');
+-
+-    userDisplay.innerText = `player: ${user}`;
+     parent.appendChild(userDisplay);
++    userDisplay.innerText = `player: ${user}`;
++    console.log(user);
++
+     let inputField = document.querySelector("input");
+     let inputButton = document.querySelector("button");
+     parent.removeChild(inputField);
+@@ -77,9 +79,8 @@
+ 
+ 
+ function initGame() {
+-
+-    enterUserName();
+     initBoard();
+ }
+ 
+ initGame();
++
