@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<section class="header">sudoku game</section>
+<section class="header">sudoku game
+    <button type="submit" onclick="RestartLevel()">Restart level</button>
+</section>
 
 <section class="game-info">
     <form id="formUser">
@@ -18,7 +20,6 @@
 
 
     <form id="formLevel">
-
         <select class="select" id="difficulty" onchange="diffLevel()">
             <option>--Please choose a level--</option>
             <option>Easy</option>
@@ -36,14 +37,14 @@
     <div class="board" id="board"></div>
 
 </section>
-<section class="game-cards">
 
-    <div class="all-cards"></div>
 
-</section>
+    <div class="all-cards mixed-cards"></div>
+
+
 
 <section class="footer">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></section>
-<script src="../game.js" defer></script>
+<script src="../game6.js" defer></script>
 
 
 </body>
