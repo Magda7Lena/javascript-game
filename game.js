@@ -155,6 +155,24 @@ let freeSymbols = [
 const board = document.getElementById("board");
 
 
+initGame();
+
+function initGame() {
+
+}
+
+function initBoard(rows, cols) {
+    displayTimer();
+    displayEmptySlots(rows,cols);
+
+    //uploadGameData(gameData);
+   //displayCards(freeSymbols);
+
+   
+}
+
+
+
 function displayEmptySlots(rows, cols) {
     board.style.setProperty('--grid-rows', rows);
     board.style.setProperty('--grid-cols', cols);
@@ -162,7 +180,7 @@ function displayEmptySlots(rows, cols) {
         let slot = document.createElement('div');
         slot.setAttribute('class', 'slot');
         slot.setAttribute('id', slotId);
-        board.appendChild(slot).className = "slot";
+        board.appendChild(slot).className = "slot drop-zone";
     }
 }
 
@@ -203,29 +221,43 @@ function diffLevel(){
         initBoard(4,4);
         uploadGameData(gameData);
         displayCards(freeSymbols);
+          initDragAndDrop();
     } else if (option === "Medium") {
         initBoard(6,6);
         uploadGameData(gameDataMedium);
         displayCards(freeSymbolsMedium);
+          initDragAndDrop();
     } else {
         initBoard(9,9);
         uploadGameData(gameDataHard);
-        // displayCards(freeSymbolsHard);
+        displayCards(freeSymbolsHard);
+        initDragAndDrop();
     }
 }
 
+function RestartLevel(){
+    location.reload();
 
+}
 
 
 function displayCards(cards) {
+
     let len = cards.length;
+    let cardsContainer = document.querySelector(".all-cards");
     for (let i = 0; i < len ; i++){
+        let imgDiv = document.createElement("div");
         let card = document.createElement("img");
         let source = cards[i].img;
+        let name = cards[i].name;
         card.setAttribute('src', source);
-        card.setAttribute('class','card');
+        imgDiv.appendChild(card);
+        imgDiv.setAttribute('class','card');
+        imgDiv.setAttribute('data-sym', name);
+        imgDiv.setAttribute('draggable', 'true');
         let parent = document.querySelector(".all-cards");
-        parent.appendChild(card);
+        //parent.appendChild(card);
+        cardsContainer.appendChild(imgDiv);
     }
 }
 
@@ -278,18 +310,127 @@ function displayTimer() {
     controls.appendChild(resetButton);
 }
 
+function initDragAndDrop() {
 
+    let cards = document.querySelectorAll(".card");
+    let slots = document.querySelectorAll(".slot");
 
-function initBoard(rows, cols) {
-    displayTimer();
-    displayEmptySlots(rows,cols);
-    // uploadGameData(gameData);
-    // displayCards(freeSymbols);
+    initCards(cards);
+    initSlots(slots);
 }
 
 
-function initGame() {
+function initCards(cards) {
+    for (let card of cards){
+        initCard(card);
+    }
+ }
+
+ function initCard(cards) {
+
+         cards.addEventListener("dragstart", onDragStart);
+         cards.addEventListener("drag", onDrag);
+         cards.addEventListener("dragend", onDragEnd);
+         //cards.setAttribute("draggable", "true");
+ }
+
+ function initSlots(slots) {
+    for (let slot of slots){
+        initSlot(slot);
+    }
+ }
+
+  function initSlot(slot) {
+
+     slot.addEventListener('drop', onDrop);
+     slot.addEventListener('dragenter', onDragEnter);
+     slot.addEventListener('dragover', onDragOver);
+     slot.addEventListener('dragleave', onDragLeave);
+ }
+
+ function onDragStart(event) {
+        setDropZonesHighlight();
+
+        let symbolType = this.dataset.sym;
+        this.classList.add('dragged');
+        event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
+        console.log(event.dataTransfer.getData('type/dragged-${symbolType}'))
+        event.dataTransfer.setData('type/dragged-card', symbolType);
+}
+
+function onDrag(event){
+
 
 }
 
-initGame();
+function onDragEnd(event) {
+        event.preventDefault();
+        setDropZonesHighlight(false);
+        this.classList.remove('dragged');
+}
+
+function onDragEnter(e) {
+
+ }
+
+  function onDragOver(e) {
+    if (canDropHere(e)) {
+        e.preventDefault();
+    }
+ }
+
+ function onDrop(event) {
+    let draggedElement = document.querySelector(".dragged");
+    console.log("dragged ele")
+    event.currentTarget.appendChild(draggedElement);
+    let name = draggedElement.dataset.sym;
+    let target = event.currentTarget.id;
+    getNeighboursIndexes(target);
+  
+}
+
+function showErrors() {
+
+}
+
+function getNeighboursIndexes(targetId) {
+
+
+}
+
+ function onDragLeave(event) {
+    if (event.dataTransfer.types.includes(`type/dragged-card`) &&
+        event.relatedTarget !== null &&
+        event.currentTarget !== event.relatedTarget.closest('.drop-zone')) {
+        this.classList.remove("over-zone");
+        this.classList.add("active-zone");
+    }
+ }
+
+ function setDropZonesHighlight(highlighted = true){
+    let dropZones = document.querySelectorAll(".drop-zone");
+     for (let dropZone of dropZones){
+         if(highlighted) {
+             dropZone.classList.add("active-zone");
+         }
+         else {
+             dropZone.classList.remove("active-zone");
+         }
+     }
+ }
+
+ function canDropHere(e) {
+    let target = e.currentTarget;
+    console.log(target.getElementsByTagName('img').length);
+    if (target.getElementsByTagName('img').length > 0){
+        return false;
+    }
+    return true;
+ }
+
+
+
+
+
+
+

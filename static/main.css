@@ -109,17 +109,23 @@ section.game-board {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     box-shadow: 0 0 0 1px #122138;
     gap:3px;
-    margin: 30px;
+
 }
 
 
 .slot {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 55px;
     height: 55px;
     box-shadow: 0 0 0 1px #122138;
     align-self: center;
     justify-self: center;
+
     border-radius: var(--border-radius);}
+
 
 
 .all-cards {width: 100%;
@@ -141,7 +147,6 @@ section.game-board {
 .card > img {
     width: 55px;
     height: 55px;
-    padding: 2px;
     box-shadow: 0 0 0 2px #122138;
     border-radius: var(--border-radius);
 }
@@ -178,4 +183,14 @@ section.game-board {
     border-radius: 2px;
     height:20px;
     width: 30px;
+}
+
+.drop-zone.active-zone:empty, .mixed-cards.active-zone {
+    border: 4px dashed #cdcdcd;
+    border-radius: var(--border-radius);
+    background: #e8fbe8;
+}
+
+.drop-zone.over-zone:empty, .mixed-cards.over-zone {
+    border-style: solid;
 }
