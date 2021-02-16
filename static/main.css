@@ -4,101 +4,23 @@
     --grid-rows: 1;
 }
 
-
 html, body {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    height: 100vh;
-    width: 100%;
-    grid-template-rows: auto;
+    background-image: url("../static/images/background.jpg");
+    background-color: #cdcdcd;
+    height: 1200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
 }
-
-.header {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    background-color: #6C648B;
-}
-
-.game-info {
-    /* display: inline-flex; */
-    align-content: center;
-    justify-content: space-around;
-    background-color: #FBA100;
-    display: grid;
-}
-
-.UserName {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 20px;
-    font-family: Monospaced, sans-serif;
-}
-
-/*.select, .input {*/
-/*    display: flex;*/
-/*    text-align: center;*/
-/*    vertical-align: center;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-
-/*}*/
-
-.selected {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 20px;
-    font-family: Monospaced, sans-serif;
-}
-
-section.game-cards.div {
-    float: right;
-    display: inline-flex;
-    justify-content: center;
-}
-
-/*section.game-cards.button {*/
-/*    float: right;*/
-/*    display: inline-flex;*/
-/*    justify-content: flex-start !important;*/
-/*}*/
-/*section.game-cards.select {*/
-/*    display: inline-flex;*/
-/*    justify-content: center;*/
-/*    width: 30px*/
-/*}*/
-
-
 
 section.game-board {
     align-items: center;
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: #B6A19E;
-}
 
-.game-cards {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    background-color: #6BBAA7;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #86989B;
-    color: darkslategray;
-    font-size: smaller;
-    text-align: center;
 }
 
 #board {
@@ -109,11 +31,11 @@ section.game-board {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     box-shadow: 0 0 0 1px #122138;
     gap:3px;
+    background-color: #41c9f5;
 
 }
 
-
-.slot {
+.slot{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -133,21 +55,22 @@ section.game-board {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    background-color: #6BBAA7;}
+  }
 
 .card {
     margin: 14px;
     width: 55px;
     height: 55px;
     padding: 2px;
-    box-shadow: 0 0 0 2px #122138;
+    box-shadow: 0 0 0 2px #f5f408;
     border-radius: var(--border-radius);
+    background-color: #41c9f5;
 }
 
 .card > img {
     width: 55px;
     height: 55px;
-    box-shadow: 0 0 0 2px #122138;
+    box-shadow: 0 0 0 2px #f5f408;
     border-radius: var(--border-radius);
 }
 
@@ -160,35 +83,10 @@ section.game-board {
 }
 
 
-.container {width: auto;display: inline-flex;align-content: center;justify-content: center;flex-direction: row;}
-
-
-.panel {
-    border-radius: 2px;
-    border: 1px solid black;
-    width:100px;
-    height:20px
-
-}
-
-.btn-group .button {
-  border-radius: 2px;
-    margin-inside: 10px;
-    height:20px;
-    width:auto
-}
-
-.btn-primary {
-    margin-inline: 5px;
-    border-radius: 2px;
-    height:20px;
-    width: 30px;
-}
-
 .drop-zone.active-zone:empty, .mixed-cards.active-zone {
-    border: 4px dashed #cdcdcd;
+    border: 4px dashed #0550fc;
     border-radius: var(--border-radius);
-    background: #e8fbe8;
+    background: #b8d1fb;
 }
 
 .drop-zone.over-zone:empty, .mixed-cards.over-zone {

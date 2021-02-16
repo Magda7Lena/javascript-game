@@ -1,3 +1,4 @@
+var gameSize = 0;
 
 let gameDataHard = [
     {id:4,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
@@ -162,15 +163,14 @@ function initGame() {
 }
 
 function initBoard(rows, cols) {
-    displayTimer();
+
     displayEmptySlots(rows,cols);
 
     //uploadGameData(gameData);
    //displayCards(freeSymbols);
 
-   
+   // initDragAndDrop();
 }
-
 
 
 function displayEmptySlots(rows, cols) {
@@ -200,6 +200,7 @@ function enterUserName(){
 
 }
 
+
 function diffLevel(){
     let parent = document.querySelector(".game-info");
     let option = document.getElementById("difficulty").value;
@@ -218,16 +219,20 @@ function diffLevel(){
     });
 
     if (option === "Easy"){
+        //displayTimer();
+        gameSize = 4;
         initBoard(4,4);
         uploadGameData(gameData);
         displayCards(freeSymbols);
           initDragAndDrop();
     } else if (option === "Medium") {
+        gameSize = 6;
         initBoard(6,6);
         uploadGameData(gameDataMedium);
         displayCards(freeSymbolsMedium);
           initDragAndDrop();
     } else {
+        gameSize = 9;
         initBoard(9,9);
         uploadGameData(gameDataHard);
         displayCards(freeSymbolsHard);
@@ -356,6 +361,8 @@ function initCards(cards) {
         event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
         console.log(event.dataTransfer.getData('type/dragged-${symbolType}'))
         event.dataTransfer.setData('type/dragged-card', symbolType);
+        // return background color to blue once picked up
+        getNeighboursIndexes(this.parentNode.id, symbolType, false);
 }
 
 function onDrag(event){
@@ -367,6 +374,7 @@ function onDragEnd(event) {
         event.preventDefault();
         setDropZonesHighlight(false);
         this.classList.remove('dragged');
+        getNeighboursIndexes(this.parentNode.id, this.dataset.sym, true);
 }
 
 function onDragEnter(e) {
@@ -385,16 +393,66 @@ function onDragEnter(e) {
     event.currentTarget.appendChild(draggedElement);
     let name = draggedElement.dataset.sym;
     let target = event.currentTarget.id;
-    getNeighboursIndexes(target);
-  
-}
-
-function showErrors() {
+    getNeighboursIndexes(target, name, true);
 
 }
 
-function getNeighboursIndexes(targetId) {
 
+function getNeighboursIndexes(targetId, cardName, isPlaced) {
+     let row = [];
+     let col = [];
+     let neighs = [];
+
+     let start = targetId - targetId % gameSize;
+
+     for(let i = 0; i < gameSize; i++){
+          if(start+i == targetId){
+              continue;
+          }
+          neighs.push(start+i);
+      }
+
+     let x = targetId;
+      while(x > 0){
+          x -= gameSize;
+          if(x >= 0){
+              neighs.push(x);
+          }
+      }
+
+      x = parseInt(targetId);
+
+      while(x < gameSize*gameSize){
+          x += gameSize;
+          if(x < gameSize*gameSize){
+              neighs.push(x);
+          }
+      }
+      console.log(neighs);
+
+      for(let id of neighs){
+          console.log(id);
+          let currTile = document.getElementById(String(id));
+          if (currTile.getAttribute("name") == cardName){
+              if(isPlaced) {
+                  currTile.style.backgroundColor = "red";
+              }
+              else{
+                  currTile.style.backgroundColor = "#41c9f5";
+              }
+          }
+          else if(currTile.childElementCount > 0){
+              if (currTile.childNodes[0].dataset.sym == cardName){
+                  if(isPlaced){
+                      currTile.childNodes[0].style.backgroundColor = "red";
+                  }
+                  else{
+                      currTile.childNodes[0].style.backgroundColor = "#41c9f5";
+                  }
+
+              }
+          }
+      }
 
 }
 
