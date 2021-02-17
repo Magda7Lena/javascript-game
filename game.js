@@ -154,7 +154,12 @@ let freeSymbols = [
 ];
 
 const board = document.getElementById("board");
-
+const timerDisplay = document.querySelector("#timerDisplay");
+const timerPanel = document.querySelector(".panel");
+let minutes = 0;
+let seconds = 0;
+let miliseconds = 0;
+let timer;
 
 initGame();
 
@@ -285,11 +290,7 @@ function uploadGameData(gameData) {
 
 
 
-let timerDisplay = document.querySelector("#timerDisplay");
-let minutes = 0;
-let seconds = 0;
-let miliseconds = 0;
-let timer;
+
 
 function startTimer() {
     if(!timer) {
@@ -377,7 +378,7 @@ function onDragStart(event) {
     let symbolType = this.dataset.sym;
     this.classList.add('dragged');
     event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
-    console.log(event.dataTransfer.getData('type/dragged-${symbolType}'))
+    console.log(event.dataTransfer.getData('type/dragged-${symbolType}'));
     event.dataTransfer.setData('type/dragged-card', symbolType);
     // return background color to blue once picked up
     getNeighboursIndexes(this.parentNode.id, symbolType, false);
@@ -393,7 +394,7 @@ function onDragEnd(event) {
     setDropZonesHighlight(false);
     this.classList.remove('dragged');
     getNeighboursIndexes(this.parentNode.id, this.dataset.sym, true);
-    checkWin()
+    checkWin();
 }
 
 function onDragEnter(e) {
@@ -411,7 +412,7 @@ function onDrop(event) {
     // console.log("dragged ele")
     event.currentTarget.appendChild(draggedElement);
     let name = draggedElement.dataset.sym;
-    let parent = draggedElement.parentElement
+    let parent = draggedElement.parentElement;
     parent.setAttribute('name', name);
     let target = event.currentTarget.id;
     getNeighboursIndexes(target);
@@ -513,18 +514,18 @@ function checkWin() {
     if (symbolsLeft.length == 0) {
         if (slots.length == 16) {
             let check = checkSmallBoard(slots);
-            alert(check)
+            alert(check);
             return check;
         }
         if (slots.length == 36) {
             let check = checkMediumBoard(slots);
-            alert(check)
+            alert(check);
             return check;
         }
         if (slots.length == 81) {
-            let check = checkLargeBoard(slots)
-            alert(check)
-            return check
+            let check = checkLargeBoard(slots);
+            alert(check);
+            return check;
         }
     } else {
         return false;
@@ -533,21 +534,21 @@ function checkWin() {
 
 
 function validationOfSymbols(listOfSymbols) {
-    let len = listOfSymbols.length
-    let names = []
-    let uniqeNames = []
+    let len = listOfSymbols.length;
+    let names = [];
+    let uniqeNames = [];
     for (let i = 0; i < len; i++) {
-        let name = listOfSymbols[i].getAttribute('name')
-        names.push(name)
-        uniqeNames = [...new Set(names)]
+        let name = listOfSymbols[i].getAttribute('name');
+        names.push(name);
+        uniqeNames = [...new Set(names)];
     }
     let winCondition
     if (uniqeNames.length == len) {
-        winCondition = true
+        winCondition = true;
     } else {
-        winCondition = false
+        winCondition = false;
     }
-    return winCondition
+    return winCondition;
 }
 
 
@@ -579,28 +580,28 @@ function checkListOfCol(slots, index) {
 
 
 function checkListOfRows(slots, index) {
-    let listOfSlots = []
+    let listOfSlots = [];
     if (slots.length == 16) {
         for (let i = index; i < index + 4; i) {
-            listOfSlots.push(slots[i])
-            i += 1
+            listOfSlots.push(slots[i]);
+            i += 1;
         }
-        return validationOfSymbols(listOfSlots)
+        return validationOfSymbols(listOfSlots);
     }
     if (slots.length == 36) {
         for (let i = index; i < index + 6; i) {
-            listOfSlots.push(slots[i])
-            i += 1
+            listOfSlots.push(slots[i]);
+            i += 1;
         }
-        return validationOfSymbols(listOfSlots)
+        return validationOfSymbols(listOfSlots);
 
     }
     if (slots.length == 81) {
         for (let i = index; i < index + 9; i) {
-            listOfSlots.push(slots[i])
-            i += 1
+            listOfSlots.push(slots[i]);
+            i += 1;
         }
-        return validationOfSymbols(listOfSlots)
+        return validationOfSymbols(listOfSlots);
     }
 }
 
@@ -676,7 +677,14 @@ function checkLargeBoard(slots) {
     return winFlag;
 }
 
+function ShowStartButtons(){
+    document.getElementById("myClick").style.display = 'inline-block';
+    document.getElementById("myClick2").style.display = 'inline-block';
+}
 
+function showStopper() {
+    document.getElementById("myClick3").style.visibility = "visible";
+}
 
 
 

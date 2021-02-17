@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
        <link rel="stylesheet" type="text/css" href="../static/main.css">
 </head>
-<body>
+<<body id="mainclick" onclick="ShowStartButtons()">
     <div class="container">
 
         <br> <br>
@@ -22,9 +22,10 @@
         <div class="col-6 "style="text-align: center">
             <h2><img class=sudoku" style="position: center;" width="auto" height="40"  src="../static/images/welcome.png" alt="Sudoku" /></h2>
 
-                <button class="btn btn-info btn-lg"  type="submit" onclick="RestartLevel()">Restart level</button>
+                <button class="btn btn-info btn-lg"   type="submit"  data-bs-toggle="tooltip" data-bs-html="true" title="Come on play again !"
+                        id="myClick" style="display: none" onclick="RestartLevel()">Restart level</button>
       <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >Start game</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal" id="myClick2" style="display: none">Start game</button>
          <!-- Modal -->
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -74,7 +75,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-info" data-dismiss="modal">Let's get started</button>
+              <button type="button" class="btn btn-outline-info" data-dismiss="modal" onclick="showStopper()">Let's get started</button>
             </div>
           </div>
 
@@ -83,7 +84,7 @@
         </div>
 
             <br>
-            <div class="panel">
+            <div class="panel" id="myClick3"   style="visibility: hidden">
 
                     <div class="col-md-2" id="timerDisplay">00:00:00</div>
                         <button class="btn btn-primary btn-group" id="startBtn" role="button" onclick="startTimer()">
