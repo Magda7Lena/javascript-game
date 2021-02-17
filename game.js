@@ -1,32 +1,49 @@
 var gameSize = 0;
 
 let gameDataHard = [
-    {id:4,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:5, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:6,name: "airplane", img: "../static/images/3-airplane.png"},
-    {id:7, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:8, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {id:14, name: "whale", img: "../static/images/8-whale.png"},
-    {id:16, name: "surf", img: "../static/images/6-surf.png"},
-    {id:24, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:25, name: "whale", img: "../static/images/8-whale.png"},
-    {id:27,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:28, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {id:29, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:31, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:42, name: "shell", img: "../static/images/5-shell.png"},
-    {id:48,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:49, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:52,name: "airplane", img: "../static/images/3-airplane.png"},
-    {id:54,name: "airplane", img: "../static/images/3-airplane.png"},
-    {id:55, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:65, name: "shell", img: "../static/images/5-shell.png"},
-    {id:67, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {id:68,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:72, name: "whale", img: "../static/images/8-whale.png"},
-    {id:73, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:74,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:77, name: "shell", img: "../static/images/5-shell.png"},
+
+
+    {id:39,name: "airplane", img: "../static/images/3-airplane.png"},
+    {id:76,name: "airplane", img: "../static/images/3-airplane.png"},
+
+    {id:66, name: "surf", img: "../static/images/6-surf.png"},
+    {id:22, name: "surf", img: "../static/images/6-surf.png"},
+    {id:78, name: "surf", img: "../static/images/6-surf.png"},
+    {id:47, name: "surf", img: "../static/images/6-surf.png"},
+
+
+
+    {id:9, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id:29, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id:61, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id:77, name: "windsurf", img: "../static/images/2-windsurf.png"},
+
+    {id:17,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {id:30,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+
+    {id:13, name: "shell", img: "../static/images/5-shell.png"},
+    {id:33, name: "shell", img: "../static/images/5-shell.png"},
+    {id:70, name: "shell", img: "../static/images/5-shell.png"},
+
+
+    {id:3, name: "whale", img: "../static/images/8-whale.png"},
+    {id:40, name: "whale", img: "../static/images/8-whale.png"},
+    {id:55, name: "whale", img: "../static/images/8-whale.png"},
+
+
+    {id:38, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id:67, name: "pelican", img: "../static/images/9-pelican.png"},
+
+
+    {id:52, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id:57, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id:72, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+
+
+    {id:11, name: "flamingo", img: "../static/images/7-flamingo.png"},
+    {id:21, name: "flamingo", img: "../static/images/7-flamingo.png"},
+    {id:79, name: "flamingo", img: "../static/images/7-flamingo.png"},
+
 
     ];
 
@@ -36,23 +53,32 @@ let freeSymbolsHard = [
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {name: "windsurf", img: "../static/images/2-windsurf.png"},
+
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+
+
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
+
+
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
+
+
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
@@ -60,27 +86,30 @@ let freeSymbolsHard = [
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
+
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
+    {name: "airplane", img: "../static/images/3-airplane.png"},
+
+
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {name: "surf", img: "../static/images/6-surf.png"},
-    {name: "surf", img: "../static/images/6-surf.png"},
-    {name: "surf", img: "../static/images/6-surf.png"},
+
     {name: "surf", img: "../static/images/6-surf.png"},
     {name: "surf", img: "../static/images/6-surf.png"},
     {name: "surf", img: "../static/images/6-surf.png"},

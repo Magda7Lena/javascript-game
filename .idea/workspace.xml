@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f793b9f-add4-43e8-bed7-7ced19ba8d2f" name="Default Changelist" comment="timer css">
+    <list default="true" id="6f793b9f-add4-43e8-bed7-7ced19ba8d2f" name="Default Changelist" comment="timer hidden ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +140,8 @@
       <workItem from="1613150623371" duration="7279000" />
       <workItem from="1613219632406" duration="840000" />
       <workItem from="1613482877876" duration="382000" />
-      <workItem from="1613590326773" duration="743000" />
+      <workItem from="1613590326773" duration="818000" />
+      <workItem from="1613591182390" duration="1632000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore added&#10;images loaded&#10;initial css styling of cards and cards display&#10;sample sudoku board">
       <created>1612878680511</created>
@@ -256,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613573090648</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="timer hidden ok">
+      <created>1613591105668</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1613591105668</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +296,8 @@
     <MESSAGE value="inittimer, 1/2, css-input/level" />
     <MESSAGE value="timer working css tbc." />
     <MESSAGE value="timer css" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer css" />
+    <MESSAGE value="timer hidden ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="timer hidden ok" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/javascript_game$app.coverage" NAME="app Coverage Results" MODIFIED="1613155279947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
