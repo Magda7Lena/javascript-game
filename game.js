@@ -283,36 +283,54 @@ function uploadGameData(gameData) {
     }
 }
 
-function displayTimer() {
-
-    let parent = document.querySelector('.game-info');
-    let stopwatch = document.createElement('div');
-    let timer = document.createElement('ul');
-    let controls = document.createElement('div');
-    let startButton = document.createElement('button');
-    let stopButton = document.createElement('button');
-    let restartButton = document.createElement('button');
-    let resetButton = document.createElement('button');
 
 
+let timerDisplay = document.querySelector("#timerDisplay");
+let minutes = 0;
+let seconds = 0;
+let miliseconds = 0;
+let timer;
 
-    stopwatch.setAttribute("class", "container");
-    timer.setAttribute("class","panel");
-    controls.setAttribute("class","btn-group");
-    controls.setAttribute("role","toolbar");
-    controls.setAttribute("aria-label","Toolbar with button groups");
-    startButton.setAttribute("class","btn btn-primary");
-    stopButton.setAttribute("class","btn btn-primary");
-    restartButton.setAttribute("class","btn btn-primary");
-    resetButton.setAttribute("class","btn btn-primary");
+function startTimer() {
+    if(!timer) {
+        timer = setInterval(runTimer, 10);
+    }
+}
 
-    parent.appendChild(stopwatch);
-    stopwatch.appendChild(timer);
-    stopwatch.appendChild(controls);
-    controls.appendChild(startButton);
-    controls.appendChild(stopButton);
-    controls.appendChild(restartButton);
-    controls.appendChild(resetButton);
+function runTimer() {
+    timerDisplay.textContent = timeFormat();
+    miliseconds++;
+    if(miliseconds == 100) {
+        miliseconds = 0;
+        seconds++;
+    }
+    if(seconds == 60) {
+        seconds = 0;
+        minutes++;
+    }
+}
+
+function stopTimer() {
+    clearInterval(timer);
+}
+
+function pauseTimer() {
+    clearInterval(timer);
+    timer = false;
+}
+
+function timeFormat() {
+    return (minutes < 10 ? "0" + minutes: minutes) + ":" + (seconds < 10 ? "0" + seconds:seconds) + ":" + (miliseconds <10 ? "0" + miliseconds:miliseconds);
+}
+
+function resetTimer() {
+    if(timer) {
+        minutes = 0;
+        seconds = 0;
+        miliseconds = 0;
+        timerDisplay.textContent = timeFormat();
+    }
+    timer = false;
 }
 
 function initDragAndDrop() {
