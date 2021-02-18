@@ -9,7 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
        <link rel="stylesheet" type="text/css" href="../static/main.css">
 </head>
-<<body id="mainclick" onclick="ShowStartButtons()">
+<body id="mainclick" onclick="ShowStartButtons()">
     <div class="container">
 
         <br> <br>
@@ -23,9 +23,9 @@
             <h2><img class=sudoku" style="position: center;" width="auto" height="40"  src="../static/images/welcome.png" alt="Sudoku" /></h2>
 
                 <button class="btn btn-info btn-lg"   type="submit"  data-bs-toggle="tooltip" data-bs-html="true" title="Come on play again !"
-                        id="myClick" style="display: none" onclick="RestartLevel()">Restart level</button>
+                        id="myClick" style="display: none" onclick="RestartGame()">Restart game</button>
       <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal" id="myClick2" style="display: none">Start game</button>
+       <button type="button" class="btn btn-info btn-lg" data-toggle="modal"  data-target="#myModal" id="myClick2" style="display: none">Start game</button>
          <!-- Modal -->
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -45,8 +45,11 @@
             <div class="game-info">
                     <form class="form-inline" id="formUser">
                         <div class="form-group mb-3">
-                            <input class="input" type="text" id="userName" placeholder="Your name">
-                            <button type="submit" class="btn btn-light" onclick="enterUserName()">Confirm</button>
+                            <input class="input" type="text" id="userName" placeholder="Your name" required>
+                            <br><br>
+                            <div>
+                            <button type="submit" class="btn btn-info" onclick="enterUserName()" >Confirm</button>
+                            </div>
                         </div>
 
                     </form>
@@ -56,7 +59,7 @@
                 </svg>
 
                     <form id="formLevel">
-                        <select class="form-select" aria-label="Default select example" id="difficulty" onchange="diffLevel()">
+                        <select class="form-select" aria-label="Default select example" id="difficulty" onchange="diffLevel()" >
                             <option selected>Please choose a level</option>
                             <option>Easy</option>
                             <option>Medium</option>
@@ -75,7 +78,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-info" data-dismiss="modal" onclick="showStopper()">Let's get started</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal">Let's get started</button>
             </div>
           </div>
 
@@ -84,18 +87,19 @@
         </div>
 
             <br>
-            <div class="panel" id="myClick3"   style="visibility: hidden">
-
-                    <div class="col-md-2" id="timerDisplay">00:00:00</div>
-                        <button class="btn btn-primary btn-group" id="startBtn" role="button" onclick="startTimer()">
+            <div class="row-12" id="myClick3" style="display: none; text-align: center">
+                 <div class="userDisplayBoard"></div>
+                <div class = "col">
+                    <div class="col" style="align-items: center" id="timerDisplay">00:00:00</div>
+                        <button class="btn btn-primary btn-group btn btn-info" id="startBtn" role="button" onclick="startTimer()">
                             <span class="glyphicon glyphicon-play"></span></button>
-                        <button class="btn btn-primary btn-group" id="stopBtn" role="button" onclick="stopTimer()">
+                        <button class="btn btn-primary btn-group btn btn-info" id="stopBtn" role="button" onclick="stopTimer()">
                             <span class="glyphicon glyphicon-stop"></span></button>
-                        <button class="btn btn-primary btn-group" id="pauseBtn" role="button" onclick="pauseTimer()">
+                        <button class="btn btn-primary btn-group btn btn-info" id="pauseBtn" role="button" onclick="pauseTimer()">
                             <span class="glyphicon glyphicon-pause"></span></button>
-                        <button class="btn btn-primary btn-group" id="resetBtn" onclick="resetTimer()">
+                        <button class="btn btn-primary btn-group btn btn-info" id="resetBtn" onclick="resetTimer()">
                             <span class="glyphicon glyphicon-refresh"></span></button>
-
+                </div>
             </div>
 
 <br>
@@ -119,7 +123,7 @@
 
     <div class="row" style="position: fixed; left:20px; bottom: 10px " class="p-3 mb-2 bg-light text-dark">
     <div class="col" class="p-3 mb-2 bg-light text-dark">
-        <p>&copy; Sudoku! 2021 &middot; <a >Creators J. J. M. </a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; Sudoku! 2021 &middot; <a style="color: black">Creators M. Pawlak J. Pisasecka J. Zakrzewska </a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </div>
 
 </div>
