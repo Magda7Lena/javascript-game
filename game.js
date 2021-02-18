@@ -1,50 +1,32 @@
 var gameSize = 0;
 
 let gameDataHard = [
-
-
     {id:39,name: "airplane", img: "../static/images/3-airplane.png"},
     {id:76,name: "airplane", img: "../static/images/3-airplane.png"},
-
     {id:66, name: "surf", img: "../static/images/6-surf.png"},
     {id:22, name: "surf", img: "../static/images/6-surf.png"},
     {id:78, name: "surf", img: "../static/images/6-surf.png"},
     {id:47, name: "surf", img: "../static/images/6-surf.png"},
-
-
-
     {id:9, name: "windsurf", img: "../static/images/2-windsurf.png"},
     {id:29, name: "windsurf", img: "../static/images/2-windsurf.png"},
     {id:61, name: "windsurf", img: "../static/images/2-windsurf.png"},
     {id:77, name: "windsurf", img: "../static/images/2-windsurf.png"},
-
     {id:17,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {id:30,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-
     {id:13, name: "shell", img: "../static/images/5-shell.png"},
     {id:33, name: "shell", img: "../static/images/5-shell.png"},
     {id:70, name: "shell", img: "../static/images/5-shell.png"},
-
-
     {id:3, name: "whale", img: "../static/images/8-whale.png"},
     {id:40, name: "whale", img: "../static/images/8-whale.png"},
     {id:55, name: "whale", img: "../static/images/8-whale.png"},
-
-
     {id:38, name: "pelican", img: "../static/images/9-pelican.png"},
     {id:67, name: "pelican", img: "../static/images/9-pelican.png"},
-
-
     {id:52, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {id:57, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {id:72, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-
-
     {id:11, name: "flamingo", img: "../static/images/7-flamingo.png"},
     {id:21, name: "flamingo", img: "../static/images/7-flamingo.png"},
     {id:79, name: "flamingo", img: "../static/images/7-flamingo.png"},
-
-
     ];
 
 let freeSymbolsHard = [
@@ -53,7 +35,6 @@ let freeSymbolsHard = [
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
-
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
@@ -61,24 +42,18 @@ let freeSymbolsHard = [
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
     {name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-
-
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
     {name: "shell", img: "../static/images/5-shell.png"},
-
-
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
     {name: "whale", img: "../static/images/8-whale.png"},
-
-
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
@@ -86,14 +61,12 @@ let freeSymbolsHard = [
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
     {name: "pelican", img: "../static/images/9-pelican.png"},
-
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
     {name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
@@ -101,20 +74,16 @@ let freeSymbolsHard = [
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
     {name: "airplane", img: "../static/images/3-airplane.png"},
-
-
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
     {name: "flamingo", img: "../static/images/7-flamingo.png"},
-
     {name: "surf", img: "../static/images/6-surf.png"},
     {name: "surf", img: "../static/images/6-surf.png"},
     {name: "surf", img: "../static/images/6-surf.png"},
-    {name: "surf", img: "../static/images/6-surf.png"},
-    {name: "surf", img: "../static/images/6-surf.png"},
+
 
 ];
 
@@ -183,12 +152,13 @@ let freeSymbols = [
 ];
 
 const board = document.getElementById("board");
-const timerDisplay = document.querySelector("#timerDisplay");
-const timerPanel = document.querySelector(".panel");
-let minutes = 0;
-let seconds = 0;
-let miliseconds = 0;
-let timer;
+
+function ShowStartButtons(){
+    document.getElementById("myClick").style.display = 'inline-block';
+    document.getElementById("myClick2").style.display = 'inline-block';
+    document.getElementById("myClick3").style.display = 'inline';
+}
+
 
 initGame();
 
@@ -226,7 +196,14 @@ function enterUserName() {
     userDisplay.setAttribute("userinput", user);
     userDisplay.classList.add("UserName");
     parent.appendChild(userDisplay);
-    userDisplay.innerText = `player: ${user}`;
+    userDisplay.innerText = `Player: ${user}`;
+
+    let parent2 = document.querySelector(".userDisplayBoard");
+    let userDisplayBoard = document.createElement('div');
+    userDisplayBoard.setAttribute("userinput", user);
+    userDisplayBoard.classList.add("UserName");
+    parent2.appendChild(userDisplayBoard);
+    userDisplayBoard.innerText = `Player: ${user}`;
 
     let formUser = document.getElementById("formUser");
     parent.removeChild(formUser);
@@ -242,7 +219,7 @@ function diffLevel() {
     optionDisplay.setAttribute("diffLevel", option);
     optionDisplay.classList.add("selected");
     parent.appendChild(optionDisplay);
-    optionDisplay.innerText = `difficulty level: ${option}`;
+    optionDisplay.innerText = `Difficulty level: ${option}`;
 
     let formLevel = document.getElementById("formLevel");
     parent.removeChild(formLevel);
@@ -274,7 +251,7 @@ function diffLevel() {
     }
 }
 
-function RestartLevel() {
+function RestartGame() {
     location.reload();
 
 }
@@ -319,7 +296,11 @@ function uploadGameData(gameData) {
 
 
 
-
+let timerDisplay = document.querySelector("#timerDisplay");
+let minutes = 0;
+let seconds = 0;
+let miliseconds = 0;
+let timer;
 
 function startTimer() {
     if(!timer) {
@@ -407,7 +388,7 @@ function onDragStart(event) {
     let symbolType = this.dataset.sym;
     this.classList.add('dragged');
     event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
-    console.log(event.dataTransfer.getData('type/dragged-${symbolType}'));
+    console.log(event.dataTransfer.getData('type/dragged-${symbolType}'))
     event.dataTransfer.setData('type/dragged-card', symbolType);
     // return background color to blue once picked up
     getNeighboursIndexes(this.parentNode.id, symbolType, false);
@@ -423,7 +404,7 @@ function onDragEnd(event) {
     setDropZonesHighlight(false);
     this.classList.remove('dragged');
     getNeighboursIndexes(this.parentNode.id, this.dataset.sym, true);
-    checkWin();
+    checkWin()
 }
 
 function onDragEnter(e) {
@@ -441,18 +422,16 @@ function onDrop(event) {
     // console.log("dragged ele")
     event.currentTarget.appendChild(draggedElement);
     let name = draggedElement.dataset.sym;
-    let parent = draggedElement.parentElement;
-    parent.setAttribute('name', name);
+    //let parent = draggedElement.parentElement
+    //parent.setAttribute('name', name);
     let target = event.currentTarget.id;
-    getNeighboursIndexes(target);
+    getNeighboursIndexes(target, name, true);
 
 
 }
 
 
 function getNeighboursIndexes(targetId, cardName, isPlaced) {
-    let row = [];
-    let col = [];
     let neighs = [];
 
     let start = targetId - targetId % gameSize;
@@ -543,18 +522,18 @@ function checkWin() {
     if (symbolsLeft.length == 0) {
         if (slots.length == 16) {
             let check = checkSmallBoard(slots);
-            alert(check);
+            alert(check)
             return check;
         }
         if (slots.length == 36) {
             let check = checkMediumBoard(slots);
-            alert(check);
+            alert(check)
             return check;
         }
         if (slots.length == 81) {
-            let check = checkLargeBoard(slots);
-            alert(check);
-            return check;
+            let check = checkLargeBoard(slots)
+            alert(check)
+            return check
         }
     } else {
         return false;
@@ -563,21 +542,21 @@ function checkWin() {
 
 
 function validationOfSymbols(listOfSymbols) {
-    let len = listOfSymbols.length;
-    let names = [];
-    let uniqeNames = [];
+    let len = listOfSymbols.length
+    let names = []
+    let uniqeNames = []
     for (let i = 0; i < len; i++) {
-        let name = listOfSymbols[i].getAttribute('name');
-        names.push(name);
-        uniqeNames = [...new Set(names)];
+        let name = listOfSymbols[i].getAttribute('name')
+        names.push(name)
+        uniqeNames = [...new Set(names)]
     }
     let winCondition
     if (uniqeNames.length == len) {
-        winCondition = true;
+        winCondition = true
     } else {
-        winCondition = false;
+        winCondition = false
     }
-    return winCondition;
+    return winCondition
 }
 
 
@@ -609,28 +588,28 @@ function checkListOfCol(slots, index) {
 
 
 function checkListOfRows(slots, index) {
-    let listOfSlots = [];
+    let listOfSlots = []
     if (slots.length == 16) {
         for (let i = index; i < index + 4; i) {
-            listOfSlots.push(slots[i]);
-            i += 1;
+            listOfSlots.push(slots[i])
+            i += 1
         }
-        return validationOfSymbols(listOfSlots);
+        return validationOfSymbols(listOfSlots)
     }
     if (slots.length == 36) {
         for (let i = index; i < index + 6; i) {
-            listOfSlots.push(slots[i]);
-            i += 1;
+            listOfSlots.push(slots[i])
+            i += 1
         }
-        return validationOfSymbols(listOfSlots);
+        return validationOfSymbols(listOfSlots)
 
     }
     if (slots.length == 81) {
         for (let i = index; i < index + 9; i) {
-            listOfSlots.push(slots[i]);
-            i += 1;
+            listOfSlots.push(slots[i])
+            i += 1
         }
-        return validationOfSymbols(listOfSlots);
+        return validationOfSymbols(listOfSlots)
     }
 }
 
@@ -706,14 +685,7 @@ function checkLargeBoard(slots) {
     return winFlag;
 }
 
-function ShowStartButtons(){
-    document.getElementById("myClick").style.display = 'inline-block';
-    document.getElementById("myClick2").style.display = 'inline-block';
-}
 
-function showStopper() {
-    document.getElementById("myClick3").style.visibility = "visible";
-}
 
 
 
