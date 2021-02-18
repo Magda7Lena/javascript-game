@@ -20,6 +20,7 @@ section.game-board {
     display: flex;
     align-content: center;
     justify-content: center;
+    z-index: 1;
 
 }
 
@@ -32,8 +33,10 @@ section.game-board {
     box-shadow: 0 0 0 1px #122138;
     gap:3px;
     background-color: #41c9f5;
+    z-index: 3;
 
 }
+
 
 .slot{
     display: flex;
@@ -45,7 +48,7 @@ section.game-board {
     box-shadow: 0 0 0 1px #122138;
     align-self: center;
     justify-self: center;
-
+    z-index: 2;
     border-radius: var(--border-radius);}
 
 
@@ -80,6 +83,7 @@ section.game-board {
     height: 55px;
     box-shadow: 0 0 0 2px #122138;
     border-radius: var(--border-radius);
+    z-index: 1;
 }
 
 
@@ -100,3 +104,10 @@ section.game-board {
     margin: auto;
 }*/
 
+
+
+.final {
+    width: 40%;
+    height: auto;
+
+}
