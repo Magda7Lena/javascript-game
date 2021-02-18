@@ -1,33 +1,33 @@
 var gameSize = 0;
 
 let gameDataHard = [
-    {id:39,name: "airplane", img: "../static/images/3-airplane.png"},
-    {id:76,name: "airplane", img: "../static/images/3-airplane.png"},
-    {id:66, name: "surf", img: "../static/images/6-surf.png"},
-    {id:22, name: "surf", img: "../static/images/6-surf.png"},
-    {id:78, name: "surf", img: "../static/images/6-surf.png"},
-    {id:47, name: "surf", img: "../static/images/6-surf.png"},
-    {id:9, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:29, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:61, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:77, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:17,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:30,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:13, name: "shell", img: "../static/images/5-shell.png"},
-    {id:33, name: "shell", img: "../static/images/5-shell.png"},
-    {id:70, name: "shell", img: "../static/images/5-shell.png"},
-    {id:3, name: "whale", img: "../static/images/8-whale.png"},
-    {id:40, name: "whale", img: "../static/images/8-whale.png"},
-    {id:55, name: "whale", img: "../static/images/8-whale.png"},
-    {id:38, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:67, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:52, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:57, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:72, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:11, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {id:21, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    {id:79, name: "flamingo", img: "../static/images/7-flamingo.png"},
-    ];
+    {id: 39, name: "airplane", img: "../static/images/3-airplane.png"},
+    {id: 76, name: "airplane", img: "../static/images/3-airplane.png"},
+    {id: 66, name: "surf", img: "../static/images/6-surf.png"},
+    {id: 22, name: "surf", img: "../static/images/6-surf.png"},
+    {id: 78, name: "surf", img: "../static/images/6-surf.png"},
+    {id: 47, name: "surf", img: "../static/images/6-surf.png"},
+    {id: 9, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 29, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 61, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 77, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 17, name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {id: 30, name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {id: 13, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 33, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 70, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 3, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 40, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 55, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 38, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id: 67, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id: 52, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 57, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 72, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 11, name: "flamingo", img: "../static/images/7-flamingo.png"},
+    {id: 21, name: "flamingo", img: "../static/images/7-flamingo.png"},
+    {id: 79, name: "flamingo", img: "../static/images/7-flamingo.png"},
+];
 
 let freeSymbolsHard = [
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
@@ -88,26 +88,26 @@ let freeSymbolsHard = [
 ];
 
 let gameDataMedium = [
-    {id:0, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:5, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:8, name: "shell", img: "../static/images/5-shell.png"},
-    {id:9, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:10, name: "whale", img: "../static/images/8-whale.png"},
-    {id:11, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:12, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:14, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:16, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:18, name: "whale", img: "../static/images/8-whale.png"},
-    {id:19, name: "shell", img: "../static/images/5-shell.png"},
-    {id:24, name: "shell", img: "../static/images/5-shell.png"},
-    {id:25, name: "whale", img: "../static/images/8-whale.png"},
-    {id:27, name: "pelican", img: "../static/images/9-pelican.png"},
-    {id:28, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:31, name: "windsurf", img: "../static/images/2-windsurf.png"},
-    {id:32, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
-    {id:33,name: "lighthouse", img: "../static/images/4-lighthouse.png"},
-    {id:34, name: "shell", img: "../static/images/5-shell.png"}
-    ];
+    {id: 0, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 5, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id: 8, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 9, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 10, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 11, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 12, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 14, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id: 16, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 18, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 19, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 24, name: "shell", img: "../static/images/5-shell.png"},
+    {id: 25, name: "whale", img: "../static/images/8-whale.png"},
+    {id: 27, name: "pelican", img: "../static/images/9-pelican.png"},
+    {id: 28, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 31, name: "windsurf", img: "../static/images/2-windsurf.png"},
+    {id: 32, name: "jellyfish", img: "../static/images/1-jellyfish.png"},
+    {id: 33, name: "lighthouse", img: "../static/images/4-lighthouse.png"},
+    {id: 34, name: "shell", img: "../static/images/5-shell.png"}
+];
 
 let freeSymbolsMedium = [
     {name: "windsurf", img: "../static/images/2-windsurf.png"},
@@ -130,15 +130,15 @@ let freeSymbolsMedium = [
 ];
 
 let gameData = [
-    {id:0, name:'jellyfish', img:"../static/images/1-jellyfish.png",},
-    {id:1, name:'flamingo', img:"../static/images/7-flamingo.png",},
-    {id:2, name:'airplane', img:"../static/images/3-airplane.png",},
-    {id:4, name:'airplane', img:"../static/images/3-airplane.png",},
-    {id:7, name:'flamingo', img:"../static/images/7-flamingo.png",},
-    {id:10, name:'surf', img:"../static/images/6-surf.png",},
-    {id:12, name:'surf', img:"../static/images/6-surf.png",},
-    {id:14, name:'flamingo', img:"../static/images/7-flamingo.png",},
-    {id:15, name:'jellyfish', img:"../static/images/1-jellyfish.png",}
+    {id: 0, name: 'jellyfish', img: "../static/images/1-jellyfish.png",},
+    {id: 1, name: 'flamingo', img: "../static/images/7-flamingo.png",},
+    {id: 2, name: 'airplane', img: "../static/images/3-airplane.png",},
+    {id: 4, name: 'airplane', img: "../static/images/3-airplane.png",},
+    {id: 7, name: 'flamingo', img: "../static/images/7-flamingo.png",},
+    {id: 10, name: 'surf', img: "../static/images/6-surf.png",},
+    {id: 12, name: 'surf', img: "../static/images/6-surf.png",},
+    {id: 14, name: 'flamingo', img: "../static/images/7-flamingo.png",},
+    {id: 15, name: 'jellyfish', img: "../static/images/1-jellyfish.png",}
 ];
 
 let freeSymbols = [
@@ -153,7 +153,7 @@ let freeSymbols = [
 
 const board = document.getElementById("board");
 
-function ShowStartButtons(){
+function ShowStartButtons() {
     document.getElementById("myClick").style.display = 'inline-block';
     document.getElementById("myClick2").style.display = 'inline-block';
     document.getElementById("myClick3").style.display = 'inline';
@@ -167,7 +167,11 @@ function initGame() {
 }
 
 function initBoard(rows, cols) {
-
+    let parent = document.querySelector('.game-board')
+    let board = document.createElement('div')
+    board.setAttribute('class', 'board')
+    board.setAttribute('id', 'board')
+    parent.appendChild(board)
     displayEmptySlots(rows, cols);
 
     //uploadGameData(gameData);
@@ -178,6 +182,8 @@ function initBoard(rows, cols) {
 
 
 function displayEmptySlots(rows, cols) {
+
+
     board.style.setProperty('--grid-rows', rows);
     board.style.setProperty('--grid-cols', cols);
     for (let slotId = 0; slotId < (rows * cols); slotId++) {
@@ -225,8 +231,8 @@ function diffLevel() {
     parent.removeChild(formLevel);
 
     let slotsToremove = document.querySelectorAll(".slot");
-    slotsToremove.forEach(function(element) {
-    element.remove();
+    slotsToremove.forEach(function (element) {
+        element.remove();
     });
 
     if (option === "Easy") {
@@ -295,7 +301,6 @@ function uploadGameData(gameData) {
 }
 
 
-
 let timerDisplay = document.querySelector("#timerDisplay");
 let minutes = 0;
 let seconds = 0;
@@ -303,7 +308,7 @@ let miliseconds = 0;
 let timer;
 
 function startTimer() {
-    if(!timer) {
+    if (!timer) {
         timer = setInterval(runTimer, 10);
     }
 }
@@ -311,11 +316,11 @@ function startTimer() {
 function runTimer() {
     timerDisplay.textContent = timeFormat();
     miliseconds++;
-    if(miliseconds == 100) {
+    if (miliseconds == 100) {
         miliseconds = 0;
         seconds++;
     }
-    if(seconds == 60) {
+    if (seconds == 60) {
         seconds = 0;
         minutes++;
     }
@@ -331,11 +336,11 @@ function pauseTimer() {
 }
 
 function timeFormat() {
-    return (minutes < 10 ? "0" + minutes: minutes) + ":" + (seconds < 10 ? "0" + seconds:seconds) + ":" + (miliseconds <10 ? "0" + miliseconds:miliseconds);
+    return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds) + ":" + (miliseconds < 10 ? "0" + miliseconds : miliseconds);
 }
 
 function resetTimer() {
-    if(timer) {
+    if (timer) {
         minutes = 0;
         seconds = 0;
         miliseconds = 0;
@@ -399,12 +404,33 @@ function onDrag(event) {
 
 }
 
+function getWinStatus() {
+    let result = checkWin()
+    let flag = document.createElement('img')
+    flag.setAttribute('class', 'final')
+    if (result == true) {
+        flag.setAttribute('src', "../static/images/youwin.png")
+        let parent = document.querySelector('.game-board')
+        let board = document.querySelector('.board')
+        board.parentNode.removeChild(board)
+        parent.appendChild(flag)
+    }
+    if (result == false) {
+        flag.setAttribute('src', "../static/images/youlose.png")
+        let parent = document.querySelector('.game-board')
+        let board = document.querySelector('.board')
+        board.parentNode.removeChild(board)
+        parent.appendChild(flag)
+    }
+
+}
+
 function onDragEnd(event) {
     event.preventDefault();
     setDropZonesHighlight(false);
     this.classList.remove('dragged');
     getNeighboursIndexes(this.parentNode.id, this.dataset.sym, true);
-    checkWin()
+    getWinStatus()
 }
 
 function onDragEnter(e) {
@@ -422,14 +448,12 @@ function onDrop(event) {
     // console.log("dragged ele")
     event.currentTarget.appendChild(draggedElement);
     let name = draggedElement.dataset.sym;
-    //let parent = draggedElement.parentElement
-    //parent.setAttribute('name', name);
+    let parent = draggedElement.parentElement
+    parent.setAttribute('name', name);
     let target = event.currentTarget.id;
     getNeighboursIndexes(target, name, true);
 
-
 }
-
 
 function getNeighboursIndexes(targetId, cardName, isPlaced) {
     let neighs = [];
@@ -522,21 +546,18 @@ function checkWin() {
     if (symbolsLeft.length == 0) {
         if (slots.length == 16) {
             let check = checkSmallBoard(slots);
-            alert(check)
             return check;
         }
         if (slots.length == 36) {
             let check = checkMediumBoard(slots);
-            alert(check)
             return check;
         }
         if (slots.length == 81) {
             let check = checkLargeBoard(slots)
-            alert(check)
             return check
+        } else {
+            return false;
         }
-    } else {
-        return false;
     }
 }
 
@@ -602,7 +623,6 @@ function checkListOfRows(slots, index) {
             i += 1
         }
         return validationOfSymbols(listOfSlots)
-
     }
     if (slots.length == 81) {
         for (let i = index; i < index + 9; i) {
