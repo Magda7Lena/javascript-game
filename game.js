@@ -159,6 +159,35 @@ function ShowStartButtons() {
     document.getElementById("myClick3").style.display = 'inline';
 }
 
+function music(){
+
+        let myAudio = document.getElementById('myAudio');
+        let buttons = document.getElementsByTagName('button');
+        let stopTime = 300;
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+            myAudio.currentTime = this.getAttribute("data-start");
+            stopTime = this.getAttribute("data-stop");
+            myAudio.play();
+            }, false);
+        }
+
+        myAudio.addEventListener('timeupdate', function() {
+        if (this.currentTime > stopTime) {
+            this.pause();
+        }
+        }, false); add 
+}
+
+function music2(){
+
+        const myAudio = document.getElementById('myAudio');
+
+        myAudio.addEventListener('pause', (event) => {
+        });
+}
+
 
 initGame();
 
@@ -174,10 +203,6 @@ function initBoard(rows, cols) {
     parent.appendChild(board)
     displayEmptySlots(rows, cols);
 
-    //uploadGameData(gameData);
-    //displayCards(freeSymbols);
-
-    // initDragAndDrop();
 }
 
 
@@ -396,9 +421,7 @@ function onDragStart(event) {
     let symbolType = this.dataset.sym;
     this.classList.add('dragged');
     event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
-    console.log(event.dataTransfer.getData('type/dragged-${symbolType}'));
     event.dataTransfer.setData('type/dragged-card', symbolType);
-    // return background color to blue once picked up
     getNeighboursIndexes(this.parentNode.id, symbolType, false);
 }
 
@@ -416,7 +439,7 @@ function getWinStatus() {
     let endTime = timerDisplay.innerText;
     if (result == true) {
         flag.setAttribute('src', "../static/images/youwin.png");
-        endTimeInfo.innerText = `your time: ${endTime}`;
+        endTimeInfo.innerText = `Your time: ${endTime}`;
         let parent = document.querySelector('.game-board');
         let board = document.querySelector('.board');
         board.parentNode.removeChild(board);
@@ -453,7 +476,6 @@ function onDragOver(e) {
 
 function onDrop(event) {
     let draggedElement = document.querySelector(".dragged");
-    // console.log("dragged ele")
     event.currentTarget.appendChild(draggedElement);
     let name = draggedElement.dataset.sym;
     let parent = draggedElement.parentElement;
@@ -491,10 +513,8 @@ function getNeighboursIndexes(targetId, cardName, isPlaced) {
             neighs.push(x);
         }
     }
-    console.log(neighs);
 
     for (let id of neighs) {
-        console.log(id);
         let currTile = document.getElementById(String(id));
         if (currTile.getAttribute("name") == cardName) {
             if (isPlaced) {
@@ -538,7 +558,6 @@ function setDropZonesHighlight(highlighted = true) {
 
 function canDropHere(e) {
     let target = e.currentTarget;
-    console.log(target.getElementsByTagName('img').length);
     if (target.getElementsByTagName('img').length > 0) {
         return false;
     }
