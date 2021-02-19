@@ -18,6 +18,7 @@ html, body {
 section.game-board {
     align-items: center;
     display: flex;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     z-index: 1;
@@ -107,7 +108,14 @@ section.game-board {
 
 
 .final {
+    display: flex;
     width: 40%;
     height: auto;
 
+}
+.finalText {
+    display: flex;
+    font-size: x-large;
+    height: auto;
+    color: #D70000;
 }
