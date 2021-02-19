@@ -707,6 +707,8 @@ function checkLargeBoard(slots) {
 
 
 
-
+function showStopper() {
+    document.getElementById("myClick3").style.visibility = "visible";
+}
 
 
