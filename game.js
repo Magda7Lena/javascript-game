@@ -155,41 +155,6 @@ let parentDivOnDragStart
 
 const board = document.getElementById("board");
 
-function ShowStartButtons() {
-    document.getElementById("myClick").style.display = 'inline-block';
-    document.getElementById("myClick2").style.display = 'inline-block';
-    document.getElementById("myClick3").style.display = 'inline';
-}
-
-function music(){
-
-        let myAudio = document.getElementById('myAudio');
-        let buttons = document.getElementsByTagName('button');
-        let stopTime = 300;
-
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function() {
-            myAudio.currentTime = this.getAttribute("data-start");
-            stopTime = this.getAttribute("data-stop");
-            myAudio.play();
-            }, false);
-        }
-
-        myAudio.addEventListener('timeupdate', function() {
-        if (this.currentTime > stopTime) {
-            this.pause();
-        }
-        }, false); add 
-}
-
-function music2(){
-
-        const myAudio = document.getElementById('myAudio');
-
-        myAudio.addEventListener('pause', (event) => {
-        });
-}
-
 
 initGame();
 
@@ -756,5 +721,31 @@ function checkLargeBoard(slots) {
 function showStopper() {
     document.getElementById("myClick3").style.visibility = "visible";
 }
+
+function ShowStartButtons() {
+    document.getElementById("myClick").style.display = 'inline-block';
+    document.getElementById("myClick2").style.display = 'inline-block';
+    document.getElementById("myClick3").style.display = 'inline';
+    document.getElementById("myMusic").style.display = 'inline';
+}
+
+
+let myAudio = document.getElementById("myAudio");
+let isPlaying = false;
+
+function music()
+{
+    isPlaying ? myAudio.pause() : myAudio.play();
+        };
+
+    myAudio.onplaying = function()
+        {
+    isPlaying = true;
+        };
+    myAudio.onpause = function()
+        {
+    isPlaying = false;
+};
+
 
 

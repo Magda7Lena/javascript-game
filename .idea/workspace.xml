@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f65b7449-353c-4217-b877-ec99a5bc5fd1" name="Default Changelist" comment="show/hide stopper">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
-    </list>
+    <list default="true" id="f65b7449-353c-4217-b877-ec99a5bc5fd1" name="Default Changelist" comment="show/hide stopper" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +22,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../19 luty wieczor/javascript-game" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../api-wars" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -44,6 +41,7 @@
       <workItem from="1613758053696" duration="1127000" />
       <workItem from="1613759238221" duration="596000" />
       <workItem from="1613796402445" duration="2248000" />
+      <workItem from="1613810462590" duration="11611000" />
     </task>
     <task id="LOCAL-00001" summary="show/hide stopper">
       <created>1613733816973</created>
