@@ -151,6 +151,8 @@ let freeSymbols = [
     {name: "surf", img: "../static/images/6-surf.png",},
 ];
 
+let parentDivOnDragStart
+
 const board = document.getElementById("board");
 
 function ShowStartButtons() {
@@ -422,7 +424,9 @@ function onDragStart(event) {
     this.classList.add('dragged');
     event.dataTransfer.setData('type/dragged-${symbolType}', symbolType);
     event.dataTransfer.setData('type/dragged-card', symbolType);
+    parentDivOnDragStart = this.parentNode
     getNeighboursIndexes(this.parentNode.id, symbolType, false);
+
 }
 
 function onDrag(event) {
@@ -456,10 +460,22 @@ function getWinStatus() {
 
 }
 
+function nameParmChecking(parent) {
+    console.log(parent.id)
+    console.log(parentDivOnDragStart)
+    console.log(parentDivOnDragStart)
+    if(parent.id != parentDivOnDragStart.id){
+        parentDivOnDragStart.setAttribute('name','')
+    }
+
+}
+
 function onDragEnd(event) {
     event.preventDefault();
     setDropZonesHighlight(false);
     this.classList.remove('dragged');
+    let parent = this.parentNode
+    nameParmChecking(parent)
     getNeighboursIndexes(this.parentNode.id, this.dataset.sym, true);
     getWinStatus();
 }
